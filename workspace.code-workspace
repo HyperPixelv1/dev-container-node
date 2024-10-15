@@ -1,0 +1,112 @@
+{
+	"folders": [
+		// Konteynerleri ayaklandırmak ve ayarları tutmak için kullanılan path.
+		{
+			"name": "workspace_dizini",
+			"path": "/workspace"
+		},
+		{
+			"name": "my_apps",
+			"path": "/usr/src/my_apps"
+		}
+	],
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "Kill 3000 Node.js process",
+				"command": "kill -9 `ps aux | grep 3000 | head -n1 | awk '{print $2}'` && rm -f /usr/src/my_apps/3000",
+				"type": "shell",
+				"args": [],
+				"problemMatcher": [
+					"$tsc"
+				],
+				"presentation": {
+					"reveal": "always"
+				},
+				"group": "build"
+			}
+		]
+	},
+	"settings": {
+		// Explorer sekmesinde görüntülenmesini istemediğimiz dizinler için "files.exclude"
+		"files.exclude": {
+			// volume dizini docker ayaklandırmak için kullanılıyor bu yüzden gizle.
+			"**/volume": true
+		},
+		//---------- SETTINGS ---------------------------------
+		"editor.formatOnSave": true,
+		"editor.fontSize": 16,
+		"debug.console.fontSize": 18,
+		"terminal.integrated.fontSize": 16,
+		"editor.minimap.autohide": true,
+		"[json]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"[yaml]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"disableGlobalExtensions": true,
+		"files.autoSave": "onFocusChange",
+		"extensions.supportVirtualWorkspaces": {
+			"pub.name": true
+		},
+		"remote.downloadExtensionsLocally": true,
+		//---------- JavaScript/Node.js ----------------------------
+		"[javascript]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode",
+			"editor.formatOnSave": true
+		},
+		"[javascriptreact]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode",
+			"editor.formatOnSave": true
+		},
+		"[typescript]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode",
+			"editor.formatOnSave": true
+		},
+		"[typescriptreact]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode",
+			"editor.formatOnSave": true
+		},
+		"files.associations": {
+			"*.js": "javascript",
+			"*.ts": "typescript"
+		},
+		"editor.formatOnSaveTimeout": 5000,
+		//---------- DEV CONTAINER ----------------------------
+		"dev.containers.dockerComposePath": "docker compose",
+		//---------- Live Share -------------------------------
+		"liveshare.allowGuestDebugControl": true,
+		"liveshare.allowGuestTaskControl": true,
+		"liveshare.languages.allowGuestCommandControl": true,
+		"liveshare.openSharedServers": false,
+		"liveshare.publishWorkspaceInfo": true,
+		//---------- GIT --------------------------------------
+		"git.ignoreLimitWarning": true,
+		"git.autofetch": true,
+		//---------- VS Code Renkelndirme ---------------------
+		"workbench.colorCustomizations": {
+			"tab.unfocusedActiveBorder": "#000000",
+			"activityBar.activeBackground": "#ff3333",
+			"activityBar.background": "#ff3333",
+			"activityBar.foreground": "#e7e7e7",
+			"activityBar.inactiveForeground": "#e7e7e799",
+			"activityBarBadge.background": "#00df00",
+			"activityBarBadge.foreground": "#15202b",
+			"commandCenter.border": "#e7e7e799",
+			"sash.hoverBorder": "#ff3333",
+			"statusBar.background": "#ff0000",
+			"statusBar.foreground": "#e7e7e7",
+			"statusBarItem.hoverBackground": "#ff3333",
+			"statusBarItem.remoteBackground": "#ff0000",
+			"statusBarItem.remoteForeground": "#e7e7e7",
+			"titleBar.activeBackground": "#ff0000",
+			"titleBar.activeForeground": "#e7e7e7",
+			"titleBar.inactiveBackground": "#ff000099",
+			"titleBar.inactiveForeground": "#e7e7e799"
+		},
+		//------ VS Code Çerçevesini Renkelndirme ------------
+		"peacock.remoteColor": "#ff0000"
+	}
+}

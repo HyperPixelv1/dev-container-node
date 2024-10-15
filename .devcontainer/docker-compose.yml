@@ -1,0 +1,19 @@
+version: '3'
+services:
+  node:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ../:/workspace
+      - ../volume/my_apps:/usr/src/my_apps
+      - ../volume/logs:/home/node/.npm/_logs/
+    ports:
+      - "3000:3000"
+    command: >
+      sh -c "
+      if [ ! -f /workspace/package.json ]; then
+        cd /workspace && npm init -y;
+      fi &&
+      npm install &&
+      tail -f /dev/null"
