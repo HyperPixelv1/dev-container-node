@@ -107,6 +107,7 @@
 			"titleBar.inactiveForeground": "#e7e7e799"
 		},
 		//------ VS Code Çerçevesini Renkelndirme ------------
-		"peacock.remoteColor": "#ff0000"
+		"peacock.remoteColor": "#ff0000",
+		"liveServer.settings.multiRootWorkspaceName": "my_apps"
 	}
 }
